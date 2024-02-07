@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using DotNetTrainingBatch3.ConsoleApp.AdoDotNetExamples;
+using DotNetTrainingBatch3.ConsoleApp.DapperExamples;
 
 Console.WriteLine("Hello, World!");
 
@@ -52,14 +53,23 @@ Console.WriteLine("Hello, World!");
 
 #endregion
 
-AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+//AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 //adoDotNetExample.Read();
 //adoDotNetExample.Edit(1);
 
 
 //adoDotNetExample.Create("test title", "test author", "test content");
 //adoDotNetExample.Update(11,"test title 2", "test author 2", "test content 2");
-adoDotNetExample.Delete(11);
+//adoDotNetExample.Delete(11);
+
+DapperExample dapperExample = new DapperExample();
+//dapperExample.Read();
+//dapperExample.Edit(1);
+//dapperExample.Create("test title 1", "test author 1", "test content 1");
+//dapperExample.Update(13, "test title 4", "test author 4", "test content 4");
+dapperExample.Delete(13);
+
+
 
 // hello
 
