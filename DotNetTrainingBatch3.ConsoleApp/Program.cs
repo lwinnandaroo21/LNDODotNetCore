@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using DotNetTrainingBatch3.ConsoleApp.AdoDotNetExamples;
 using DotNetTrainingBatch3.ConsoleApp.DapperExamples;
+using DotNetTrainingBatch3.ConsoleApp.EFCoreExamples;
 
 Console.WriteLine("Hello, World!");
 
@@ -62,14 +63,20 @@ Console.WriteLine("Hello, World!");
 //adoDotNetExample.Update(11,"test title 2", "test author 2", "test content 2");
 //adoDotNetExample.Delete(11);
 
-DapperExample dapperExample = new DapperExample();
+//DapperExample dapperExample = new DapperExample();
 //dapperExample.Read();
 //dapperExample.Edit(1);
 //dapperExample.Create("test title 1", "test author 1", "test content 1");
 //dapperExample.Update(13, "test title 4", "test author 4", "test content 4");
-dapperExample.Delete(13);
+//dapperExample.Delete(13);
 
-
+EFCoreExample eFCoreExample = new EFCoreExample();
+//eFCoreExample.Read();
+//eFCoreExample.Edit(1);
+//eFCoreExample.Edit(11);
+//eFCoreExample.Create("test title 1", "test author 1", "test content 1");
+//eFCoreExample.Update(14, "test title 6", "test author 6", "test content 6");
+eFCoreExample.Delete(14);
 
 // hello
 
