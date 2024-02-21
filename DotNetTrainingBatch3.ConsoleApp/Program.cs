@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using DotNetTrainingBatch3.ConsoleApp.AdoDotNetExamples;
 using DotNetTrainingBatch3.ConsoleApp.DapperExamples;
 using DotNetTrainingBatch3.ConsoleApp.EFCoreExamples;
+using DotNetTrainingBatch3.ConsoleApp.HttpClientExamples;
 
 Console.WriteLine("Hello, World!");
 
@@ -70,13 +71,19 @@ Console.WriteLine("Hello, World!");
 //dapperExample.Update(13, "test title 4", "test author 4", "test content 4");
 //dapperExample.Delete(13);
 
-EFCoreExample eFCoreExample = new EFCoreExample();
+//EFCoreExample eFCoreExample = new EFCoreExample();
 //eFCoreExample.Read();
 //eFCoreExample.Edit(1);
 //eFCoreExample.Edit(11);
 //eFCoreExample.Create("test title 1", "test author 1", "test content 1");
 //eFCoreExample.Update(14, "test title 6", "test author 6", "test content 6");
-eFCoreExample.Delete(14);
+//eFCoreExample.Delete(14);
+
+Console.WriteLine("Waiting api");
+Console.ReadKey();
+
+HttpClientExample httpClientExample = new HttpClientExample();
+await httpClientExample.Run();
 
 // hello
 
