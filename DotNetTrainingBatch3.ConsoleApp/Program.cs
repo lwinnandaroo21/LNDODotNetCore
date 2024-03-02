@@ -5,6 +5,7 @@ using DotNetTrainingBatch3.ConsoleApp.AdoDotNetExamples;
 using DotNetTrainingBatch3.ConsoleApp.DapperExamples;
 using DotNetTrainingBatch3.ConsoleApp.EFCoreExamples;
 using DotNetTrainingBatch3.ConsoleApp.HttpClientExamples;
+using DotNetTrainingBatch3.ConsoleApp.RestClientExamples;
 
 Console.WriteLine("Hello, World!");
 
@@ -82,8 +83,11 @@ Console.WriteLine("Hello, World!");
 Console.WriteLine("Waiting api");
 Console.ReadKey();
 
-HttpClientExample httpClientExample = new HttpClientExample();
-await httpClientExample.Run();
+//HttpClientExample httpClientExample = new HttpClientExample();
+//await httpClientExample.Run();
+
+RestClientExample restClientExample = new RestClientExample();
+await restClientExample.Run();
 
 // hello
 
