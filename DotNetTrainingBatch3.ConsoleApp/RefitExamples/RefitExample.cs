@@ -17,12 +17,12 @@ namespace DotNetTrainingBatch3.ConsoleApp.RefitExamples
 
         public async Task Run()
         {
-            await Read();
+            //await Read();
             //await Edit(1);
             //await Edit(0);
-            //await Create("title5", "author1", "content1");
-            //await Update(18,"title2", "author2", "content2");
-            //await Delete(18);
+            //await Create("title5", "author5", "content5");
+            //await Update(20, "title6", "author6", "content6");
+            await Delete(20);
 
         }
 
@@ -62,73 +62,75 @@ namespace DotNetTrainingBatch3.ConsoleApp.RefitExamples
             }
         }
 
-        //private async Task Create(string title, string author, string content)
-        //{
+        private async Task Create(string title, string author, string content)
+        {
 
-        //    try
-        //    {
-        //        BlogModel blog = new BlogModel()
-        //        {
-        //            BlogTitle = title,
-        //            BlogAuthor = author,
-        //            BlogContent = content
-        //        };
+            try
+            {
+                BlogModel blog = new BlogModel()
+                {
+                    BlogTitle = title,
+                    BlogAuthor = author,
+                    BlogContent = content
+                };
 
-        //        var item = await refitApi.CreateBlog(blog);
+                string message = await refitApi.CreateBlog(blog);
+                Console.WriteLine(message);
+
+            }
+            catch (Refit.ApiException ex)
+            {
+                Console.WriteLine(ex.Content);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private async Task Update(int id, string title, string author, string content)
+        {
+            try
+            {
+                BlogModel blog = new BlogModel()
+                {
+                    BlogTitle = title,
+                    BlogAuthor = author,
+                    BlogContent = content
+                };
+
+                string message = await refitApi.UpdateBlog(id, blog);
+                Console.WriteLine(message);
+            }
+            catch (Refit.ApiException ex)
+            {
+                Console.WriteLine(ex.Content);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private async Task Delete(int id)
+        {
+            try
+            {
+                string message = await refitApi.DeleteBlog(id);
+                Console.WriteLine(message);
+            }
+            catch (Refit.ApiException ex)
+            {
+                Console.WriteLine(ex.Content);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
                 
-        //    }
-        //    catch (Refit.ApiException ex)
-        //    {
-        //        Console.WriteLine(ex.Content);
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        Console.WriteLine(ex.ToString());
-        //    }
-        //}
-
-        //private async Task Update(int id, string title, string author, string content)
-        //{
-        //    try
-        //    {
-        //        BlogModel blog = new BlogModel()
-        //        {
-        //            BlogTitle = title,
-        //            BlogAuthor = author,
-        //            BlogContent = content
-        //        };
-
-        //        var item = await refitApi.UpdateBlog(id, blog);
-
-        //    }
-        //    catch (Refit.ApiException ex)
-        //    {
-        //        Console.WriteLine(ex.Content);
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        Console.WriteLine(ex.ToString());
-        //    }
-        //}
-
-        //private async Task Delete(int id)
-        //{
-        //    try
-        //    {
-        //        var item = await refitApi.DeleteBlog(id);
-
-        //    }
-        //    catch (Refit.ApiException ex)
-        //    {
-        //        Console.WriteLine(ex.Content);
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        Console.WriteLine(ex.ToString());
-        //    }
-        //}
+            }
+        }
     }
 }

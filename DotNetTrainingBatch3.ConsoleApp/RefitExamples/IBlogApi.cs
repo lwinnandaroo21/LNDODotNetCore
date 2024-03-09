@@ -18,13 +18,13 @@ namespace DotNetTrainingBatch3.ConsoleApp.RefitExamples
         [Get("/api/blog/{id}")]
         Task<BlogModel> GetBlog(int id);
 
-        //[Post("/api/blog")]
-        //Task<string> CreateBlog(BlogModel blog);
+        [Post("/api/blog")]
+        Task<string> CreateBlog(BlogModel blog);
 
-        //[Put("/api/blog/{id}")]
-        //Task<string> UpdateBlog(int id, BlogModel blog);
+        [Put("/api/blog/{id}")]
+        Task<string> UpdateBlog(int id, BlogModel blog);
 
-        //[Delete("/api/blog/{id}")]
-        //Task<string> DeleteBlog(int id);
+        [Delete("/api/blog/{id}")]
+        Task<string> DeleteBlog(int id);
     }
 }
