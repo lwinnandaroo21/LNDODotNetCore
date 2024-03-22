@@ -81,8 +81,8 @@ Console.WriteLine("Hello, World!");
 //eFCoreExample.Update(14, "test title 6", "test author 6", "test content 6");
 //eFCoreExample.Delete(14);
 
-Console.WriteLine("Waiting api");
-Console.ReadKey();
+//Console.WriteLine("Waiting api");
+//Console.ReadKey();
 
 //HttpClientExample httpClientExample = new HttpClientExample();
 //await httpClientExample.Run();
@@ -91,9 +91,25 @@ Console.ReadKey();
 //await restClientExample.Run();
 
 
-RefitExample refitExample = new RefitExample();
-await refitExample.Run();
+//RefitExample refitExample = new RefitExample();
+//await refitExample.Run();
 // hello
+
+//EFCoreExample eFCoreExample = new EFCoreExample();
+//eFCoreExample.Generate(391);
+
+
+int pageSize = 10;
+AddDbContext db = new AddDbContext();
+int rowCount = db.Blogs.Count();
+
+int pageCount = rowCount / pageSize;
+Console.WriteLine($"current pageCount : {pageCount}");
+
+if(rowCount % pageSize > 0)
+    pageCount++;
+
+Console.WriteLine($"current page Size : {pageCount}");
 
 //Console.ReadLine();
 Console.ReadKey();
