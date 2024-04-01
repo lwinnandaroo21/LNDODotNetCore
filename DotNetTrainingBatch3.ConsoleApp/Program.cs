@@ -99,17 +99,17 @@ Console.WriteLine("Hello, World!");
 //eFCoreExample.Generate(391);
 
 
-int pageSize = 10;
-AddDbContext db = new AddDbContext();
-int rowCount = db.Blogs.Count();
+//int pageSize = 10;
+//AddDbContext db = new AddDbContext();
+//int rowCount = db.Blogs.Count();
 
-int pageCount = rowCount / pageSize;
-Console.WriteLine($"current pageCount : {pageCount}");
+//int pageCount = rowCount / pageSize;
+//Console.WriteLine($"current pageCount : {pageCount}");
 
-if(rowCount % pageSize > 0)
-    pageCount++;
+//if(rowCount % pageSize > 0)
+//    pageCount++;
 
-Console.WriteLine($"current page Size : {pageCount}");
+//Console.WriteLine($"current page Size : {pageCount}");
 
 //Console.ReadLine();
 Console.ReadKey();
