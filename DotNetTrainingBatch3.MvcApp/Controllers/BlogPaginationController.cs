@@ -5,15 +5,19 @@ namespace DotNetTrainingBatch3.MvcApp.Controllers
 {
     public class BlogPaginationController : Controller
     {
+        private readonly AppDbContext _db;
+
+        public BlogPaginationController(AppDbContext db)
+        {
+            _db = db;
+        }
+
         [ActionName("Index")]
         public IActionResult BlogIndex(int pageNo = 1, int pageSize = 10)
         {
-            AddDbContext _db = new AddDbContext();
-
             int rowCount = _db.Blogs.Count();
 
             int pageCount = rowCount / pageSize;
-
             if (rowCount % pageSize > 0)
                 pageCount++;
 
@@ -23,21 +27,20 @@ namespace DotNetTrainingBatch3.MvcApp.Controllers
             }
 
             List<BlogModel> lst = _db.Blogs
-                //.OrderByDescending(x => x.BlogId)
                 .Skip((pageNo - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
 
-
-
             BlogResponseModel model = new();
             model.Data = lst;
-            model.pageSize = pageSize;
-            model.pageNo = pageNo;
-            model.pageCount = pageCount;
-            //model.isEndOfPage = pageNo == pageCount;
+            model.PageSize = pageSize;
+            model.PageNo = pageNo;
+            model.PageCount = pageCount;
 
-            return View("BlogIndex",model);
+            //model.IsEndOfPage = true;
+            //model.IsEndOfPage = pageNo == pageCount;
+
+            return View("BlogIndex", model);
         }
     }
 }

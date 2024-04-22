@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using DotNetTrainingBatch3.MvcApp.Models;
+﻿using DotNetTrainingBatch3.MvcApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace DotNetTrainingBatch3.MvcApp.Controllers
 {
